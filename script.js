@@ -1,4 +1,8 @@
 
+
+
+
+
 console.log("Running Sal's Strawberries")
 
 function writeForm(){
@@ -7,10 +11,15 @@ function writeForm(){
 }
 
 var GLOBAL_user; // Google's user object
+var favFruit = document.getElementById("favoriteFruit").value
 
 // Set up a listener for the login state of the user.
 function fb_login() {
 authenticationListener = firebase. auth().onAuthStateChanged(fb_handleLogin);
+
+}
+function fb_login() {
+firebase.auth().onAuthStateChanged(LOGIN_CALLBACK);
 
 }
 
@@ -35,4 +44,8 @@ firebase.auth().signInWithPopup(provider).then((result) => {
 GLOBAL_user = result.user; // Save the user object to a global variable
 console.log("User has logged in")
 });
+}
+function fb_write(){
+    console.log("Hi")
+    
 }
